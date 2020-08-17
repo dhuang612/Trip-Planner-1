@@ -8,6 +8,14 @@ let hotel = 'http://i.imgur.com/D9574Cu.png';
 let restaurant = 'http://i.imgur.com/cqR6pUI.png';
 let coords = [-74.009151, 40.705086];
 
+const iconURLS = {
+  hotels: "http://i.imgur.com/D9574Cu.png",
+  activity: "http://i.imgur.com/WbMOfMl.png",
+  restaurant: "http://i.imgur.com/cqR6pUI.png"
+}
+
+
+
 console.log(buildMarker)
 //this our container to connect
 const map = new mapboxgl.Map({
@@ -17,6 +25,7 @@ const map = new mapboxgl.Map({
   style: "mapbox://styles/mapbox/streets-v10" // mapbox has lots of different map styles available.
 });
 
-buildMarker(activity, coords, map);
 
-
+// map.addTo()
+let hotelMarker = buildMarker(iconURLS.activity, coords);
+hotelMarker.addTo(map);
